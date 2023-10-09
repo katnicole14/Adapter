@@ -1,10 +1,18 @@
-class adapter
+#ifndef ADAPTER_H
+#define ADAPTER_H
+#include <string>
+#include "ORM.h"
+#include "Target.h"
+
+class adapter:public Target
 {
 private:
-    /* data */
+    ORM * object;
 public:
-    adapter(/* args */);
+adapter();
+    adapter(ORM * obj) ;
     ~adapter();
 };
+#endif
 
 
