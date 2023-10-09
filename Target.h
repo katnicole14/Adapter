@@ -8,9 +8,11 @@ private:
     
 public:
     Target();
-        std::string execute_new_sql(const std::string& sql_query);
-            std::string query_database(const std::string& sql_query);
-                std::string process_result(const std::string& result) ;
+        std::string executeQuery( std::string sql_query);
+
+        private:
+            std::string query_database( std::string sql_query);
+            std::string process_result( std::string result) ;
 };
 #endif
 

@@ -1,23 +1,29 @@
-CXX = g++
-CXXFLAGS = -std=c++11 -Wall
-OUT_DIR = bin
-SRC_DIR = src
-SOURCES = $(SRC_DIR)/ORM.cpp $(SRC_DIR)/adapter.cpp $(SRC_DIR)/target.cpp $(SRC_DIR)/main.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
-TARGET = $(OUT_DIR)/my_program
+# Compiler
+CXX := g++
+# Compiler flags
+CXXFLAGS := -std=c++11 -Wall
+# Output executable
+TARGET := main
 
-.PHONY: all clean
+# Source files
+SRCS := main.cpp adapter.cpp ORM.cpp Target.cpp
 
-all: $(TARGET)
+# Object files
+OBJS := $(SRCS:.cpp=.o)
 
-$(TARGET): $(OBJECTS) | $(OUT_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJECTS)
+# Rule to build the executable
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-$(OUT_DIR):
-	mkdir -p $(OUT_DIR)
-
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.cpp $(SRC_DIR)/%.h
+# Rule to compile source files to object files
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
+# Clean rule to remove generated files
 clean:
-	rm -rf $(OUT_DIR)/*.o $(TARGET)
+	rm -f $(OBJS) $(TARGET)
+
+# Phony target to avoid conflicts with files named 'clean'
+.PHONY: clean
+run: $(TARGET)
+	./$(TARGET)

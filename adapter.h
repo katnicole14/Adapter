@@ -14,7 +14,7 @@ adapter();
     ~adapter();
 
     //calls the executeQuery() method from the ORM
-    std::string execute_sql( std::string sql_query);
+    std::string executeQuery( std::string sql_query);
 };
 #endif
 

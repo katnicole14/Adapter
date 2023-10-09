@@ -9,7 +9,18 @@ int main (){
 
 ORM *obj;
 adapter * new_obj = new adapter(obj);
-std::string result1 = new_obj->execute_sql("SELECT * FROM");
-std::cout << result1 << std::endl;
+
+//Adapter execution
+std::cout << "RESULTS FROM ADAPTER " << std::endl;
+std::string result1 = new_obj->executeQuery("SELECT * FROM");
+std::cout << result1 << std::endl<< std::endl;
+
+//Target execution
+
+std::cout << "RESULTS FROM TARGET " << std::endl<< std::endl;
+Target * target = new Target();
+std::string results2 = target->executeQuery("FROM table SELECT *");
+ std::cout << results2 << std::endl;
+
     return 0;
 }

@@ -9,11 +9,11 @@ private:
     /* data */
 public:
     ORM();
-    std:: string executeQuery(std:: string& query);
+    std:: string execute_query(std:: string& query);
 
     private:
     std::string sendToDatabase(std::string query);
 
-    std::string query(std::string& sql_query);
+    std::string Query(std::string sql_query);
 };
 #endif
