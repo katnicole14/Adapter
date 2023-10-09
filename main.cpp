@@ -7,7 +7,7 @@ using namespace std;
 
 int main (){
 
-ORM *obj;
+ORM *obj =new ORM ();
 adapter * new_obj = new adapter(obj);
 
 //Adapter execution
