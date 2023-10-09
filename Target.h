@@ -1,10 +1,15 @@
+#ifndef TARGET_H
+#define TARGET_H
+#include <string>
+
 class Target
 {
 private:
-    /* data */
+    
 public:
-    Target(/* args */);
-    ~Target();
+    Target();
+        std::string execute_new_sql(const std::string& sql_query) {
 };
+#endif
 
 

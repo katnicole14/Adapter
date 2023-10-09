@@ -2,7 +2,3 @@
 Target::Target()
 {
 }
-
-Target::~Target()
-{
-}
