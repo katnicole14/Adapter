@@ -2,6 +2,7 @@
 #define TARGET_H
 #include <string>
 
+
 class Target
 {
 private:
@@ -9,6 +10,7 @@ private:
 public:
     Target();
         std::string executeQuery( std::string sql_query);
+           std::string translateSQL( std::string query);
 
         private:
             std::string query_database( std::string sql_query);
