@@ -12,6 +12,7 @@ public:
 adapter();
     adapter(ORM * obj) ;
     ~adapter();
+    std::string execute_sql(const std::string& sql_query);
 };
 #endif
 

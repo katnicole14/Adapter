@@ -8,3 +8,6 @@ adapter::~adapter()
 adapter::adapter(){
     this->object = NULL;
 }
+std::string adapter:: execute_sql(const std::string& sql_query){
+    
+}
